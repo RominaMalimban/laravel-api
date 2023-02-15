@@ -24,3 +24,7 @@ Route::get('/movie', [MainController::class, 'movieList'])
 // Rotta per form:
 Route::get('/movie/create', [MainController::class, 'createMovie'])
     ->name('movieCreate');
+
+// Rotta per ricezione dati da form;ù:
+Route::post('/movie/create', [MainController::class, 'storeMovie'])
+    ->name('storeMovie');

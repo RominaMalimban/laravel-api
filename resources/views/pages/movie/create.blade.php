@@ -4,7 +4,9 @@
     <div class="container">
         <h1>Insert a new movie</h1>
 
-        <form method="POST" action="{{ route('movieCreate') }}">
+        @include('components.error')
+
+        <form method="POST" action="{{ route('storeMovie') }}">
         @csrf
             <div class="mb-3">
               <label for="name" class="form-label">Enter a movie title</label>
