@@ -14,4 +14,12 @@ class MainController extends Controller
         $genries = Genre:: all();
         return view('pages.home', compact('genries'));
     }
+
+    // METODO MOVIE LIST: per stampare lista completa di movies:
+    public function movieList(){
+
+        $movies = Movie::all();
+
+        return view('pages.movie.home', compact('movies'));
+    }
 }

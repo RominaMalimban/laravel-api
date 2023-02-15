@@ -16,3 +16,7 @@ use App\Http\Controllers\MainController;
 // Rotta home:
 Route::get('/', [MainController::class, 'home'])
     ->name('home');
+
+// Rotta per lista film:
+Route::get('/movie', [MainController::class, 'movieList'])
+    ->name('home.movie');
