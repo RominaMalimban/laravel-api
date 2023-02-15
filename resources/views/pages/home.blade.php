@@ -4,7 +4,9 @@
 
     <div class="container">
         <h1>Movie List</h1>
-
+        <h2>
+            <a href="{{ route('movieCreate') }}">Insert a new movie</a>
+        </h2>
         <ul>
             @foreach ($genres as $genre)
 

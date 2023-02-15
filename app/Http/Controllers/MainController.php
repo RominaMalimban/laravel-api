@@ -43,7 +43,7 @@ class MainController extends Controller
         ]);
 
         // creo movie
-        $movie = Movie:: create($data);
+        $movie = Movie:: make($data);
         // recupero genere in DB a partire dall'id:
         $genre = Genre:: find($data['genre_id']);
         // associo i due elementi:
