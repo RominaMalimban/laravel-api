@@ -22,4 +22,9 @@ class MainController extends Controller
 
         return view('pages.movie.home', compact('movies'));
     }
+
+    // METODO CREATE PER FORM:
+    public function createMovie(){
+        return view('pages.movie.create');
+    }
 }

@@ -13,10 +13,14 @@ use App\Http\Controllers\MainController;
 |
 */
 
-// Rotta home:
+// Rotta home con lsta film divisi per genere:
 Route::get('/', [MainController::class, 'home'])
     ->name('home');
 
-// Rotta per lista film:
+// Rotta home di movie per lista film non divisi per genere:
 Route::get('/movie', [MainController::class, 'movieList'])
     ->name('home.movie');
+
+// Rotta per form:
+Route::get('/movie/create', [MainController::class, 'createMovie'])
+    ->name('movieCreate');

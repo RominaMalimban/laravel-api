@@ -3,7 +3,9 @@
 @section('content')
 <div class="container">
     <h1>Movies List</h1>
-
+    <h2>
+        <a href="{{ route('movieCreate') }}">Insert a new movie</a>
+    </h2>
     <ol>
         @foreach ($movies as $movie)
             <li>
