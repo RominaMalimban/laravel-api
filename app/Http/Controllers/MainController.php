@@ -27,8 +27,9 @@ class MainController extends Controller
     public function createMovie(){
 
         $genres = Genre::all();
+        $tags = Tag::all();
 
-        return view('pages.movie.create', compact('genres'));
+        return view('pages.movie.create', compact('genres', 'tags'));
     }
 
     // METODO STORE: per ricezione dati da form:
@@ -39,10 +40,12 @@ class MainController extends Controller
             'name' => 'required|string|max:64',
             'year' => 'required|integer',
             'cashOut' => 'required|integer',
-            'genre_id' => 'required|integer'
+            'genre_id' => 'required|integer',
+            'tags' => 'required|array'
         ]);
 
-        // creo movie
+        // Assegno genere, quindi:
+        // creo movie senza buttarlo in DB:
         $movie = Movie:: make($data);
         // recupero genere in DB a partire dall'id:
         $genre = Genre:: find($data['genre_id']);
@@ -51,6 +54,10 @@ class MainController extends Controller
         // salvo in DB:
         $movie-> save();
 
+        // Assegno tag, quindi:
+        $tags = Tag::find($data['tags']);
+        $movie -> tags()-> attach($tags);
+        
         return redirect()-> route('home');
     }
 }

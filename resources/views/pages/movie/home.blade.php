@@ -12,6 +12,14 @@
                 <div><strong>Title:</strong> {{$movie-> name}}</div>
                 <div><strong>Year:</strong> {{$movie-> year}}</div>
                 <div><strong>Cash Out:</strong>  {{$movie-> cashOut}}&dollar;</div> 
+
+                {{-- ciclo per stampare tags --}}
+                <ul>
+                    @foreach ($movie -> tags as $tag)
+                        <li><strong>Tag's name:</strong> {{$tag -> name}}</li> 
+                    @endforeach 
+                </ul>
+                
             </li>
         @endforeach
     </ol>

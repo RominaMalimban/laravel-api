@@ -31,6 +31,20 @@
                 </select>
             </div>
             
+            {{-- checkbox per Tag (rapporto MtoM) --}}
+            <div class="mb-3">
+                <span>Select a Tag:</span>
+                <div class="form-check">
+                    @foreach ($tags as $tag)
+                        <div>
+                            <label class="form-check-label" for="tags">{{$tag -> name}}</label>
+                            <input class="form-check-input" type="checkbox" name="tags[]" value="{{$tag->id}}">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            
+              
             <input type="submit" class="btn btn-danger" value="Insert new movie">
           </form>
     </div>
