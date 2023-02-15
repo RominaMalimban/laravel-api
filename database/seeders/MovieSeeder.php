@@ -24,7 +24,7 @@ class MovieSeeder extends Seeder
             // salvo
             $m -> save();
 
-            // ora devo valorizzare la tabella ponte movie_tag:
+            // valorizzo la tabella ponte movie_tag:
             $tags = Tag:: inRandomOrder()-> limit(5) -> get();
             $m-> tags()-> attach($tags);
         });
