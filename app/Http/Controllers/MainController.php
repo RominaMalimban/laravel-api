@@ -25,7 +25,10 @@ class MainController extends Controller
 
     // METODO CREATE PER FORM:
     public function createMovie(){
-        return view('pages.movie.create');
+
+        $genres = Genre::all();
+        
+        return view('pages.movie.create', compact('genres'));
     }
 
     // METODO STORE: per ricezione dati da form:

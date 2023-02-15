@@ -19,7 +19,18 @@
             <div class="mb-3">
                 <label for="cashOut" class="form-label">Enter the cash out</label>
                 <input type="number" class="form-control" name="cashOut">
-              </div>
+            </div>
+
+            {{-- select per Genre (rapporto 1toM) --}}
+            <div class="mb-3">
+                <label for="genre_id" class="form-label">Select a Genre</label>
+                <select name="genre_id">
+                    @foreach ($genres as $genre)
+                        <option value="{{$genre -> id}}">{{$genre -> name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            
             <input type="submit" class="btn btn-danger" value="Insert new movie">
           </form>
     </div>
