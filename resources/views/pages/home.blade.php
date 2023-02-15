@@ -6,7 +6,7 @@
         <h1>Movie List</h1>
 
         <ul>
-            @foreach ($genries as $genre)
+            @foreach ($genres as $genre)
 
                 <li>
                     <h2>Genre: {{$genre -> name}}</h2>
