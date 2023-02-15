@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table -> string('name', 64);
             $table -> time('year');
-            $table -> integer('cashOut');
+            $table -> integer('cashOut')-> unsigned();
 
             $table->timestamps();
         });
