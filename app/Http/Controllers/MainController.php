@@ -27,7 +27,7 @@ class MainController extends Controller
     public function createMovie(){
 
         $genres = Genre::all();
-        
+
         return view('pages.movie.create', compact('genres'));
     }
 
@@ -39,8 +39,18 @@ class MainController extends Controller
             'name' => 'required|string|max:64',
             'year' => 'required|integer',
             'cashOut' => 'required|integer',
+            'genre_id' => 'required|integer'
         ]);
 
-        // return view($data);
+        // creo movie
+        $movie = Movie:: create($data);
+        // recupero genere in DB a partire dall'id:
+        $genre = Genre:: find($data['genre_id']);
+        // associo i due elementi:
+        $movie -> genre()-> associate($genre);
+        // salvo in DB:
+        $movie-> save();
+
+        return redirect()-> route('home');
     }
 }
