@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
+
+            $table -> string('name', 64);
+            $table -> time('year');
+            $table -> integer('cashOut');
+
             $table->timestamps();
         });
     }
