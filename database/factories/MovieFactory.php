@@ -17,7 +17,7 @@ class MovieFactory extends Factory
     public function definition()
     {
         return [
-            //
+           //
         ];
     }
 }
