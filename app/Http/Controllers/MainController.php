@@ -57,7 +57,16 @@ class MainController extends Controller
         // Assegno tag, quindi:
         $tags = Tag::find($data['tags']);
         $movie -> tags()-> attach($tags);
-        
+
+        return redirect()-> route('home');
+    }
+
+    // METODO DELETE:
+    public function deleteMovie(Movie $movie){
+
+        $movie ->tags()->sync([]);
+        $movie-> delete();
+
         return redirect()-> route('home');
     }
 }

@@ -20,6 +20,9 @@
                             <div><strong>Title:</strong> {{$movie-> name}}</div>
                             <div><strong>Year:</strong> {{$movie-> year}}</div>
                             <div><strong>Cash Out:</strong>  {{$movie-> cashOut}}&dollar;</div> 
+
+                            <a href="{{route('deleteMovie', $movie)}}">DELETE</a>
+                            <a href="#">EDIT</a>
                         </li>
                     @endforeach
                 </ol>

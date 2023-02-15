@@ -28,3 +28,7 @@ Route::get('/movie/create', [MainController::class, 'createMovie'])
 // Rotta per ricezione dati da form;ù:
 Route::post('/movie/create', [MainController::class, 'storeMovie'])
     ->name('storeMovie');
+
+// Rotta per eliminare movie:
+Route::get('/movie/delete/{movie}', [MainController::class, 'deleteMovie'])
+    ->name('deleteMovie');
