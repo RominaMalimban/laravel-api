@@ -8,10 +8,10 @@ use App\Models\Genre;
 use App\Models\Movie;
 class MainController extends Controller
 {
-    // Metodo HOME con lista movies:
+    // METODO HOME: con lista movies suddivisi per genere:
     public function home(){
 
-        $movies = Movie:: all();
-        return view('pages.home', compact('movies'));
+        $genries = Genre:: all();
+        return view('pages.home', compact('genries'));
     }
 }
