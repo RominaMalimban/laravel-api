@@ -9,9 +9,17 @@ class Movie extends Model
 {
     use HasFactory;
 
-    protected $filled = [
+    protected $fillable = [
         'name',
         'year',
         'cashOut'
     ];
+
+    public function genre(){
+        return $this -> belongsTo(Genre::class);
+    }
+
+    public function tags(){
+        return $this-> belongsToMany(Tag::class);
+    }
 }
