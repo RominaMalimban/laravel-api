@@ -32,3 +32,11 @@ Route::post('/movie/create', [MainController::class, 'storeMovie'])
 // Rotta per eliminare movie:
 Route::get('/movie/delete/{movie}', [MainController::class, 'deleteMovie'])
     ->name('deleteMovie');
+
+// Rotta per form con dati vecchi per edit:
+Route::get('/movie/edit/{movie}', [MainController::class, 'editMovie'])
+    ->name('editMovie');
+
+// Rotta per update:
+Route::post('/movie/update/{movie}', [MainController :: class, 'updateMovie'])
+    -> name('updateMovie');

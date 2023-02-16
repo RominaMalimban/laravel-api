@@ -69,4 +69,36 @@ class MainController extends Controller
 
         return redirect()-> route('home');
     }
+
+    // METODO EDIT: per form con vecchi dati:
+    public function editMovie(Movie $movie){
+
+        $genres = Genre::all();
+        $tags = Tag::all();
+
+        return view('pages.movie.edit', compact('movie', 'genres', 'tags'));
+    }
+
+    public function updateMovie(Request $request, Movie $movie){
+        $data = $request -> validate([
+
+            'name' => 'required|string|max:64',
+            'year' => 'required|integer',
+            'cashOut' => 'required|integer',
+            'genre_id' => 'required|integer',
+            'tags' => 'required|array'
+        ]);
+
+        $movie -> update($data);
+
+        $genre = Genre::find($data['genre_id']);
+        $movie -> genre()-> associate($genre);
+
+        $movie -> save();
+
+        $tags = Tag::find($data['tags']);
+        $movie -> tag() -> sync($tags);
+
+        return redirect() -> route('home');
+    }
 }
