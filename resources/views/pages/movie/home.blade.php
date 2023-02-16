@@ -13,6 +13,16 @@
                 <div><strong>Year:</strong> {{$movie-> year}}</div>
                 <div><strong>Cash Out:</strong>  {{$movie-> cashOut}}&dollar;</div> 
 
+                {{-- ciclo per stampare i tags: --}}
+                <ul>
+                    @foreach ($movie -> tags as $tag)
+                        <li>
+                            <strong>Tag name:</strong> {{$tag -> name}}
+                        </li>
+                @endforeach
+                </ul>
+            
+                {{-- rotte per delete ed edit: --}}
                 <a href="{{route('deleteMovie', $movie)}}">DELETE</a>
                 <a href="{{route('editMovie', $movie)}}">EDIT</a>
             </li>

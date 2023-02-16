@@ -29,7 +29,7 @@
                             @if($movie -> genre -> id === $genre -> id){
                                 selected
                                 }
-                                >{{$genre -> name}}
+                                >s{{$genre -> name}}
                             @endif
                         </option>
                     @endforeach
@@ -49,7 +49,7 @@
                                         checked> 
                                     @endif
                                 @endforeach
-                            >
+                          
                         </div>
                     @endforeach
                     
