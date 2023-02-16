@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ApiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +41,9 @@ Route::get('/movie/edit/{movie}', [MainController::class, 'editMovie'])
 // Rotta per update:
 Route::post('/movie/update/{movie}', [MainController :: class, 'updateMovie'])
     -> name('updateMovie');
+
+// Rotta test:
+Route::get('/api/v1/test',[ApiController::class,'test']);
+
+// Rotta per lista movies:
+Route::get('/api/v1/movie/all',[ApiController::class,'movieAll']);
