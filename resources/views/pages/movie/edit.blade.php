@@ -56,7 +56,7 @@
                 </div>
             </div>
             
-            <input type="submit" class="btn btn-danger" value="Insert new movie">
+            <input type="submit" class="btn btn-danger" value="Update movie">
         </form>
     </div>
     

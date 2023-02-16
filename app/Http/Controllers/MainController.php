@@ -97,7 +97,7 @@ class MainController extends Controller
         $movie -> save();
 
         $tags = Tag::find($data['tags']);
-        $movie -> tag() -> sync($tags);
+        $movie -> tags() -> sync($tags);
 
         return redirect() -> route('home');
     }
