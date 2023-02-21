@@ -42,8 +42,3 @@ Route::get('/movie/edit/{movie}', [MainController::class, 'editMovie'])
 Route::post('/movie/update/{movie}', [MainController :: class, 'updateMovie'])
     -> name('updateMovie');
 
-// Rotta test:
-Route::get('/api/v1/test',[ApiController::class,'test']);
-
-// Rotta per lista movies:
-Route::get('/api/v1/movie/all',[ApiController::class,'movieAll']);

@@ -43,7 +43,7 @@
                     @foreach ($tags as $tag)
                         <div>
                             <label class="form-check-label" for="tags">{{$tag -> name}}</label>
-                            <input class="form-check-input" type="checkbox" name="tags[]" value="{{$tag->id}}"
+                            <input class="form-check-input" type="checkbox" name="tags_id[]" value="{{$tag->id}}"
                                 @foreach ($movie -> tags as $tagMovie)
                                     @if ($tagMovie -> id === $tag -> id)
                                         checked> 

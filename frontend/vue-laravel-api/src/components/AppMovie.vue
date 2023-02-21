@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 
 import axios from 'axios';
 
@@ -38,4 +38,4 @@ export default{
     </li>
     
   </ul>
-</template>
+</template> -->

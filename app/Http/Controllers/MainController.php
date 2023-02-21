@@ -37,11 +37,11 @@ class MainController extends Controller
 
         $data = $request -> validate([
 
-            'name' => 'required|string|max:64',
-            'year' => 'required|integer',
-            'cashOut' => 'required|integer',
-            'genre_id' => 'required|integer',
-            'tags' => 'required|array'
+            'name' => 'required|string',
+            'year' => 'required|integer|min:0',
+            'cashOut' => 'required|integer|min:0',
+            'genre_id' => 'required|integer|min:1',
+            'tags_id' => 'nullable|array'
         ]);
 
         // Assegno genere, quindi:
@@ -55,7 +55,7 @@ class MainController extends Controller
         $movie-> save();
 
         // Assegno tag, quindi:
-        $tags = Tag::find($data['tags']);
+        $tags = Tag::find($data['tags_id']);
         $movie -> tags()-> attach($tags);
 
         return redirect()-> route('home');
@@ -82,11 +82,11 @@ class MainController extends Controller
     public function updateMovie(Request $request, Movie $movie){
         $data = $request -> validate([
 
-            'name' => 'required|string|max:64',
-            'year' => 'required|integer',
-            'cashOut' => 'required|integer',
-            'genre_id' => 'required|integer',
-            'tags' => 'required|array'
+            'name' => 'required|string',
+            'year' => 'required|integer|min:0',
+            'cashOut' => 'required|integer|min:0',
+            'genre_id' => 'required|integer|min:1',
+            'tags_id' => 'nullable|array'
         ]);
 
         $movie -> update($data);
@@ -96,7 +96,7 @@ class MainController extends Controller
 
         $movie -> save();
 
-        $tags = Tag::find($data['tags']);
+        $tags = Tag::find($data['tags_id']);
         $movie -> tags() -> sync($tags);
 
         return redirect() -> route('home');
